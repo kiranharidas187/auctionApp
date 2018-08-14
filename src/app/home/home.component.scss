@@ -1,0 +1,29 @@
+._flex-box {
+    display: flex;
+    align-items: center;
+    .card {
+        flex-basis: calc(33.33% - 10px);
+        margin: 5px;
+        // height: 380px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+.horizontal-center {
+    justify-content: center;
+}
+
+.bgColor {
+    background: #eee;
+}
+
+._p-10 {
+    padding: 10px;
+}
+
+.imageAdj {
+    max-height: 200px;
+    padding:10px 0;
+}

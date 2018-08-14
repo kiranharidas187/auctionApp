@@ -1,0 +1,53 @@
+<div>
+  <div>
+    <h3>Past Auctions</h3>
+    <div class="_flex-box">
+      <ng-container *ngFor="let item of allList">
+        <div class="card" *ngIf=" currentTime > item.endTime">
+          <div class="_flex-box horizontal-center bgColor">
+            <img src="{{item?.itemImage}}" class="imageAdj">
+          </div>
+          <h4 class="_p-10">{{item?.itemName}}</h4>
+          <!-- <div class="_p-10">{{item?.itemDescription}}</div> -->
+        </div>
+      </ng-container>
+    </div>
+
+
+  </div>
+
+  <div>
+    <h3>Active Auctions</h3>
+    <div class="_flex-box">
+      <ng-container *ngFor="let item of allList">
+        <div class="card" *ngIf="currentTime > item.startTime && currentTime < item.endTime">
+          <div class="_flex-box horizontal-center bgColor">
+            <img src="{{item?.itemImage}}" class="imageAdj">
+          </div>
+          <h4 class="_p-10">{{item?.itemName}} Ends in: {{timeDiff(item.endTime)}}</h4>
+          <!-- <div class="_p-10">{{item?.itemDescription}}</div> -->
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div>
+      <h3>Upcoming Auctions</h3>
+      <div class="_flex-box">
+        <ng-container *ngFor="let item of allList">
+          <div class="card" *ngIf="item.startTime >currentTime">
+            <div class="_flex-box horizontal-center bgColor">
+              <img src="{{item?.itemImage}}" class="imageAdj">
+            </div>
+            <h4 class="_p-10">{{item?.itemName}}</h4>
+            <!-- <div class="_p-10">{{item?.itemDescription}}</div> -->
+          </div>
+        </ng-container>
+      </div>
+  
+  
+    </div>
+
+  
+
+</div>
